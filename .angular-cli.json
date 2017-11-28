@@ -25,6 +25,8 @@
             "./assets/js/jquery.min.js",
             "./assets/js/utils.js",
             "./assets/js/tether.js",
+            "./assets/js/markAttachment.js",
+            "./assets/js/shift.js",
             "./assets/js/bootstrap.min.js"
         ],
         "environmentSource": "environments/environment.ts",

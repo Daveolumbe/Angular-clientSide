@@ -5,7 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
-
+"use strict";
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -19,9 +19,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   exports: [RouterModule],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-],
   declarations: []
 })
 export class RouteModule { }
