@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouteModule } from './route/route.module';
+import {ValidateService} from './services/validate.service';
+
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { RouteModule } from './route/route.module';
     RouteModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
