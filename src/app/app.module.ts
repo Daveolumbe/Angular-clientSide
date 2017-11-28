@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouteModule } from './route/route.module';
 import {ValidateService} from './services/validate.service';
+import {FlashMessagesModule} from 'angular2-flash-messages/module/module';
 
 
 
@@ -25,7 +26,8 @@ import {ValidateService} from './services/validate.service';
   imports: [
     BrowserModule,
     RouteModule,
-    FormsModule
+    FormsModule,
+    FlashMessagesModule.forRoot(),
   ],
   providers: [ValidateService],
   bootstrap: [AppComponent]
