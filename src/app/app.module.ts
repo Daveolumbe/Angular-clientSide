@@ -9,8 +9,10 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouteModule } from './route/route.module';
-import {ValidateService} from './services/validate.service';
-import {FlashMessagesModule} from 'angular2-flash-messages/module/module';
+import { ValidateService } from './services/validate.service';
+import { FlashMessagesModule } from 'angular2-flash-messages/module/module';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -27,9 +29,10 @@ import {FlashMessagesModule} from 'angular2-flash-messages/module/module';
     BrowserModule,
     RouteModule,
     FormsModule,
+    HttpClientModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
