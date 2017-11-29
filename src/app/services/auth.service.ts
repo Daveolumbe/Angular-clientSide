@@ -10,8 +10,10 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   registerUser(user) {
-    return this.http.post('http://localhost:3000/users/register', user).subscribe(data => {
-      console.log(data);
-    });
+    return this.http.post('http://localhost:3000/users/register', user);
+  }
+
+  authenticateUser(user){
+    return this.http.post('http://localhost:3000/users/authenticate', user);
   }
 }
