@@ -30,8 +30,9 @@ export class LoginComponent implements OnInit {
 
     this.authService.authenticateUser(user).subscribe(data => {
       if (data.success) {
-        this.flashMessage.show('Welcome to visilinx dashboard', {cssClass: 'alert alert-primary', timeout: 3000});
-//        this.router.navigate(['/home']);
+        this.authService.storeUserData(data.token, data.user);
+        this.flashMessage.show('Welcome to VisiLinx dashboard', {cssClass: 'alert alert-success', timeout: 3000});
+        this.router.navigate(['/dashboard']);
       } else {
         this.flashMessage.show('Something went wrong', {cssClass: 'alert alert-danger', timeout: 3000});
       }

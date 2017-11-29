@@ -7,13 +7,22 @@ export class AuthService {
   authToken: any;
   user: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   registerUser(user) {
     return this.http.post('http://localhost:3000/users/register', user);
   }
 
-  authenticateUser(user){
+  authenticateUser(user) {
     return this.http.post('http://localhost:3000/users/authenticate', user);
+  }
+
+  storeUserData(token, user) {
+    localStorage.setItem('id_token', token);
+    localStorage.setItem('user', JSON.stringify(user));
+
+    this.authToken = token;
+    this.user = user;
   }
 }
