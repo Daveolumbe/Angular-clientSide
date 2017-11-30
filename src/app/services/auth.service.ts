@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -31,5 +31,17 @@ export class AuthService {
 
     this.authToken = token;
     this.user = user;
+  }
+
+  // We loadToken for getProfile()
+  getProfile() {
+    this.loadToken();
+    const header = new HttpHeaders().set('Authorization', this.authToken);
+    return this.http.get('http://localhost:3000/users/profile', {headers: header});
+  }
+
+  loadToken() {
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
   }
 }
