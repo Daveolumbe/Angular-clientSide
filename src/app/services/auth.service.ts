@@ -18,6 +18,13 @@ export class AuthService {
     return this.http.post('http://localhost:3000/users/authenticate', user);
   }
 
+  logOut() {
+    this.authToken = null;
+    this.user = null;
+
+    localStorage.clear();
+  }
+
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
