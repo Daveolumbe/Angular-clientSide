@@ -14,6 +14,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages/module/module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { ProfileComponent } from './profile/profile.component';
+import {AuthGuard} from './guards/auth.guard';
 
 
 
@@ -34,7 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
