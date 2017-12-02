@@ -48,6 +48,11 @@ export class AuthService {
     return !(date.valueOf() > new Date().valueOf());
   }
 
+
+  isLoggedIn() {
+    return this.isTokenExpired();
+  }
+
   logOut() {
     this.authToken = null;
     this.user = null;
