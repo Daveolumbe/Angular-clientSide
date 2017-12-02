@@ -12,11 +12,11 @@ export class AuthService {
   }
 
   registerUser(user) {
-    return this.http.post('http://localhost:3000/users/register', user);
+    return this.http.post('users/register', user);
   }
 
   authenticateUser(user) {
-    return this.http.post('http://localhost:3000/users/authenticate', user);
+    return this.http.post('users/authenticate', user);
   }
 
   getTokenExpirationDate(token: string): Date {
@@ -72,7 +72,7 @@ export class AuthService {
   getProfile() {
     this.loadToken();
     const header = new HttpHeaders().set('Authorization', this.authToken);
-    return this.http.get('http://localhost:3000/users/profile', {headers: header});
+    return this.http.get('users/profile', {headers: header});
   }
 
   loadToken() {
