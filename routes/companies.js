@@ -26,7 +26,7 @@ company_router.post('/register', (req, res, next) => {
     });
 
 
-    Company.addUser(newCompany, (err, company) => {
+    Company.addCompany(newCompany, (err, company) => {
         if (err) {
             res.json({ success: false, msg: 'Failed to register company' });
         } else {
@@ -53,7 +53,7 @@ company_router.post('/authenticate', (req, res, next) => {
 
             if (isMatch) {
                 const token = jwt.sign(user.toJSON(), config.secret, {
-                    expiresIn: 604800 // 1 week 
+                    expiresIn: 604800 // 1 week
                 });
 
                 res.json({
