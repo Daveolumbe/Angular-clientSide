@@ -14,6 +14,7 @@ mongoose.connection.on('connected', () => {
 });
 
 const users = require('./routes/users');
+const Companies = require('./routes/companies');
 
 // initialise app 
 const app = express();
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.use('/users', users)
+app.use('/companies', Companies)
 
 // Index route
 app.get('/', (req, res) => {
